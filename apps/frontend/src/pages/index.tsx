@@ -1,36 +1,38 @@
 import Head from 'next/head';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Bars3Icon, XMarkIcon, AcademicCapIcon, UserGroupIcon, BuildingLibraryIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
 
 export default function Home() {
+  const { t, i18n } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [lang, setLang] = useState('FR');
+  const [lang, setLang] = useState(i18n.language || 'fr');
 
   return (
-    <div className={lang === 'AR' ? 'rtl' : ''}>
+    <div className={lang === 'ar' ? 'rtl' : ''}>
       <Head>
-        <title>Plateforme E-learning Universelle</title>
-        <meta name="description" content="Créez et partagez des cours dans toutes les disciplines" />
+        <title>{t('pageTitle')}</title>
+        <meta name="description" content={t('pageDescription')} />
       </Head>
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-white shadow z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
             <AcademicCapIcon className="h-8 w-8 text-indigo-600" />
-            <span className="font-bold text-lg">Amanet</span>
+            <span className="font-bold text-lg">{t('siteTitle')}</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <a href="#features" className="hover:text-indigo-600">Fonctionnalités</a>
-            <a href="#pricing" className="hover:text-indigo-600">Tarifs</a>
-            <a href="#about" className="hover:text-indigo-600">À propos</a>
-            <a href="#contact" className="hover:text-indigo-600">Contact</a>
-            <select value={lang} onChange={e => setLang(e.target.value)} className="border rounded px-1 py-0.5">
-              <option>FR</option>
-              <option>EN</option>
-              <option>AR</option>
+            <a href="#features" className="hover:text-indigo-600">{t('nav.features')}</a>
+            <a href="#pricing" className="hover:text-indigo-600">{t('nav.pricing')}</a>
+            <a href="#about" className="hover:text-indigo-600">{t('nav.about')}</a>
+            <a href="#contact" className="hover:text-indigo-600">{t('nav.contact')}</a>
+            <select value={lang} onChange={e => { const val = e.target.value; setLang(val); i18n.changeLanguage(val); }} className="border rounded px-1 py-0.5">
+              <option value="fr">FR</option>
+              <option value="en">EN</option>
+              <option value="ar">AR</option>
             </select>
-            <button className="text-sm px-3 py-1">Connexion</button>
-            <button className="bg-indigo-600 text-white px-3 py-1 rounded">Essai gratuit</button>
+            <button className="text-sm px-3 py-1">{t('nav.login')}</button>
+            <button className="bg-indigo-600 text-white px-3 py-1 rounded">{t('nav.signup')}</button>
           </nav>
           <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
@@ -38,17 +40,17 @@ export default function Home() {
         </div>
         {menuOpen && (
           <div className="md:hidden px-4 pb-4 flex flex-col gap-2">
-            <a href="#features" className="hover:text-indigo-600">Fonctionnalités</a>
-            <a href="#pricing" className="hover:text-indigo-600">Tarifs</a>
-            <a href="#about" className="hover:text-indigo-600">À propos</a>
-            <a href="#contact" className="hover:text-indigo-600">Contact</a>
-            <select value={lang} onChange={e => setLang(e.target.value)} className="border rounded px-1 py-0.5 w-max">
-              <option>FR</option>
-              <option>EN</option>
-              <option>AR</option>
+            <a href="#features" className="hover:text-indigo-600">{t('nav.features')}</a>
+            <a href="#pricing" className="hover:text-indigo-600">{t('nav.pricing')}</a>
+            <a href="#about" className="hover:text-indigo-600">{t('nav.about')}</a>
+            <a href="#contact" className="hover:text-indigo-600">{t('nav.contact')}</a>
+            <select value={lang} onChange={e => { const val = e.target.value; setLang(val); i18n.changeLanguage(val); }} className="border rounded px-1 py-0.5 w-max">
+              <option value="fr">FR</option>
+              <option value="en">EN</option>
+              <option value="ar">AR</option>
             </select>
-            <button className="text-sm px-3 py-1 text-left">Connexion</button>
-            <button className="bg-indigo-600 text-white px-3 py-1 rounded w-max">Essai gratuit</button>
+            <button className="text-sm px-3 py-1 text-left">{t('nav.login')}</button>
+            <button className="bg-indigo-600 text-white px-3 py-1 rounded w-max">{t('nav.signup')}</button>
           </div>
         )}
       </header>
@@ -57,11 +59,11 @@ export default function Home() {
         {/* Hero Section */}
         <section className="text-center py-20 bg-gray-50" data-aos="fade-up">
           <img src="/illustration.svg" alt="Mockup de l'interface" className="mx-auto mb-8 max-w-md" />
-          <h1 className="text-3xl sm:text-5xl font-bold mb-6 max-w-4xl mx-auto">La plateforme e-learning qui s'adapte à tous vos besoins pédagogiques</h1>
-          <p className="max-w-3xl mx-auto mb-8 text-lg text-gray-600">Pour les établissements d'enseignement, les enseignants individuels et les apprenants</p>
+          <h1 className="text-3xl sm:text-5xl font-bold mb-6 max-w-4xl mx-auto">{t('hero.title')}</h1>
+          <p className="max-w-3xl mx-auto mb-8 text-lg text-gray-600">{t('hero.subtitle')}</p>
           <div className="flex justify-center gap-4">
-            <a href="#" className="bg-indigo-600 text-white px-6 py-3 rounded">Créer mon établissement</a>
-            <a href="#" className="bg-gray-200 text-gray-900 px-6 py-3 rounded">Commencer gratuitement</a>
+            <a href="#" className="bg-indigo-600 text-white px-6 py-3 rounded">{t('hero.ctaPrimary')}</a>
+            <a href="#" className="bg-gray-200 text-gray-900 px-6 py-3 rounded">{t('hero.ctaSecondary')}</a>
           </div>
         </section>
 

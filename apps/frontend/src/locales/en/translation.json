@@ -1,1 +1,19 @@
-{}
+{
+  "siteTitle": "Amanet",
+  "pageTitle": "Universal E-learning Platform",
+  "pageDescription": "Create and share courses in every field",
+  "nav": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Login",
+    "signup": "Free Trial"
+  },
+  "hero": {
+    "title": "The e-learning platform that adapts to all your educational needs",
+    "subtitle": "For institutions, independent teachers, and learners",
+    "ctaPrimary": "Create my institution",
+    "ctaSecondary": "Get started for free"
+  }
+}
