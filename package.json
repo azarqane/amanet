@@ -1,0 +1,12 @@
+{
+  "name": "amanet-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "echo build root",
+    "test": "echo test root"
+  }
+}
