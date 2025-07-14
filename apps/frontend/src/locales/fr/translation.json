@@ -1,1 +1,19 @@
-{}
+{
+  "siteTitle": "Amanet",
+  "pageTitle": "Plateforme E-learning Universelle",
+  "pageDescription": "Créez et partagez des cours dans toutes les disciplines",
+  "nav": {
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "about": "À propos",
+    "contact": "Contact",
+    "login": "Connexion",
+    "signup": "Essai gratuit"
+  },
+  "hero": {
+    "title": "La plateforme e-learning qui s'adapte à tous vos besoins pédagogiques",
+    "subtitle": "Pour les établissements d'enseignement, les enseignants individuels et les apprenants",
+    "ctaPrimary": "Créer mon établissement",
+    "ctaSecondary": "Commencer gratuitement"
+  }
+}
