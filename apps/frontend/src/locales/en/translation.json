@@ -13,7 +13,150 @@
   "hero": {
     "title": "The e-learning platform that adapts to all your educational needs",
     "subtitle": "For institutions, independent teachers, and learners",
+    "imageAlt": "Interface mockup",
     "ctaPrimary": "Create my institution",
     "ctaSecondary": "Get started for free"
+  },
+  "who": {
+    "title": "Who can use our platform?",
+    "schools": {
+      "title": "Educational institutions",
+      "desc": "Schools, universities, and training centers"
+    },
+    "teachers": {
+      "title": "Independent teachers",
+      "desc": "Teachers, trainers, and experts"
+    },
+    "learners": {
+      "title": "Learners",
+      "desc": "Students, professionals, self-learners"
+    }
+  },
+  "features": {
+    "title": "Features by user type",
+    "schools": {
+      "title": "For institutions",
+      "item1": "Create private courses",
+      "item2": "Manage classes and cohorts",
+      "item3": "Create exercises and assessments",
+      "item4": "Administration dashboard",
+      "item5": "Track student performance"
+    },
+    "teachers": {
+      "title": "For individual teachers",
+      "item1": "Create free public courses",
+      "item2": "Markdown editor with styling",
+      "item3": "Community sharing",
+      "item4": "Engagement statistics"
+    },
+    "learners": {
+      "title": "For learners",
+      "item1": "Access courses from their institution",
+      "item2": "Discover free public courses",
+      "item3": "Personalized progress tracking",
+      "item4": "Certificates and badges"
+    }
+  },
+  "disciplines": {
+    "title": "All disciplines covered",
+    "math": "Mathematics",
+    "science": "Sciences",
+    "languages": "Languages",
+    "history": "History",
+    "computer": "Computer science",
+    "arts": "Arts",
+    "tagline": "Whatever your field of expertise"
+  },
+  "why": {
+    "title": "Why choose our platform?",
+    "flexibility": {
+      "title": "Flexibility",
+      "desc": "Private institutions and free public courses"
+    },
+    "ease": {
+      "title": "Ease of use",
+      "desc": "Intuitive Markdown editor"
+    },
+    "security": {
+      "title": "Security",
+      "desc": "Strong authentication, protected data"
+    },
+    "scalability": {
+      "title": "Scalability",
+      "desc": "From a few students to thousands"
+    }
+  },
+  "testimonials": {
+    "title": "What people say",
+    "item1": {
+      "quote": "Thanks to this platform, we modernized our courses and monitored our students' progress in real time.",
+      "author": "Jean Dupont, University Director"
+    },
+    "item2": {
+      "quote": "I was able to share my knowledge with thousands of learners easily.",
+      "author": "Sarah Martin, Independent teacher"
+    },
+    "item3": {
+      "quote": "Courses are accessible everywhere and the badges are really motivating!",
+      "author": "Karim Ali, Student"
+    }
+  },
+  "pricing": {
+    "title": "Pricing",
+    "free": {
+      "label": "Free",
+      "desc": "For individual teachers",
+      "price": "0€",
+      "feature1": "Unlimited public courses",
+      "cta": "Start"
+    },
+    "starter": {
+      "label": "Institution Starter",
+      "desc": "For small schools",
+      "price": "49€/month",
+      "feature1": "Up to 200 students",
+      "feature2": "Unlimited private courses",
+      "cta": "Subscribe"
+    },
+    "pro": {
+      "label": "Institution Pro",
+      "desc": "For universities",
+      "price": "199€/month",
+      "feature1": "Unlimited students",
+      "feature2": "Advanced features",
+      "cta": "Contact us"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send"
+  },
+  "footer": {
+    "legal": {
+      "title": "Legal",
+      "terms": "Terms",
+      "privacy": "Privacy policy"
+    },
+    "links": {
+      "title": "Useful links",
+      "support": "Support",
+      "docs": "Documentation",
+      "blog": "Blog"
+    },
+    "social": {
+      "title": "Social networks",
+      "twitter": "Twitter",
+      "linkedin": "LinkedIn",
+      "facebook": "Facebook"
+    },
+    "contact": {
+      "title": "Contact",
+      "email": "email@example.com",
+      "phone": "+33 1 23 45 67 89"
+    },
+    "copyright": "© 2024 Amanet"
   }
 }
