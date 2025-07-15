@@ -1,15 +1,34 @@
-import { useTranslation } from 'react-i18next';
-
 export default function Hero() {
-  const { t } = useTranslation();
   return (
-    <section className="text-center py-20" data-aos="fade-up">
-      <img src="/hero.png" alt={t('hero.imageAlt')} className="mx-auto mb-8 max-w-md" />
-      <h1 className="text-3xl sm:text-5xl font-bold mb-6 max-w-4xl mx-auto">{t('hero.title')}</h1>
-      <p className="max-w-3xl mx-auto mb-8 text-lg text-gray-600">{t('hero.subtitle')}</p>
-      <div className="flex justify-center gap-4">
-        <a href="#" className="bg-indigo-600 text-white px-6 py-3 rounded">{t('hero.ctaPrimary')}</a>
-        <a href="#" className="bg-gray-200 text-gray-900 px-6 py-3 rounded">{t('hero.ctaSecondary')}</a>
+    <section className="relative h-screen font-sans">
+      <img
+        src="/hero.png"
+        alt="Woman learning online"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/70 via-indigo-700/60 to-teal-500/50" />
+
+      <nav className="relative z-10 flex justify-between items-center max-w-7xl mx-auto px-6 py-4 text-white">
+        <span className="font-semibold text-lg">Amanet</span>
+        <div className="flex items-center space-x-6">
+          <a href="#features" className="hover:text-indigo-200">Features</a>
+          <a href="#pricing" className="hover:text-indigo-200">Pricing</a>
+          <a href="#about" className="hover:text-indigo-200">About</a>
+          <button className="ml-4">Log in</button>
+          <button className="ml-4 rounded-full bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white">
+            Sign up
+          </button>
+        </div>
+      </nav>
+
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">Empower Your Learning</h1>
+        <p className="text-lg md:text-2xl text-gray-200 mb-8">
+          Take your skills to the next level with our online courses.
+        </p>
+        <button className="rounded-full bg-blue-600 hover:bg-blue-700 px-6 py-3 text-white">
+          Get Started
+        </button>
       </div>
     </section>
   );
