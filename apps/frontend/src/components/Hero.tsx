@@ -27,11 +27,17 @@ export default function Hero() {
       </nav>
 
       <div className="relative z-10 flex flex-col items-start justify-center h-full text-left px-6">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">Empower Your Learning</h1>
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
+          Empower Your
+          <br />
+          Learning
+        </h1>
         <p className="text-lg md:text-2xl text-gray-200 mb-8">
-          Take your skills to the next level with our online courses.
+          Take your skills to the next level
+          <br />
+          with our online courses.
         </p>
-        <button className="rounded-full bg-blue-600 hover:bg-blue-700 px-6 py-3 text-white">
+        <button className="rounded-full bg-blue-600 hover:bg-blue-700 px-8 py-4 text-white text-lg md:text-xl">
           Get Started
         </button>
       </div>
