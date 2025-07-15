@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 export default function Why() {
   const { t } = useTranslation();
   return (
-    <section className="bg-gray-50 py-16" data-aos="fade-up">
+    <section className="py-16" data-aos="fade-up">
       <h2 className="text-2xl font-bold text-center mb-8">{t('why.title')}</h2>
       <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-8 px-4 text-center">
         <div>

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 export default function Pricing() {
   const { t } = useTranslation();
   return (
-    <section className="bg-gray-50 py-16" id="pricing" data-aos="fade-up">
+    <section className="py-16" id="pricing" data-aos="fade-up">
       <h2 className="text-2xl font-bold text-center mb-8">{t('pricing.title')}</h2>
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-4">
         <div className="border rounded-lg p-6 text-center flex flex-col">
