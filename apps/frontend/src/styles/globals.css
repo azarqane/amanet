@@ -3,15 +3,24 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply font-sans;
+  :root {
+    --color-primary: theme('colors.primary');
+    --color-primary-dark: theme('colors.primary-dark');
+    --color-background: theme('colors.background');
+    --color-surface: theme('colors.surface');
+    --color-muted: theme('colors.muted');
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans bg-background text-gray-800;
+  }
+
   .rtl {
     @apply font-arabic;
     direction: rtl;
   }
-}
-
-html {
-  scroll-behavior: smooth;
 }
