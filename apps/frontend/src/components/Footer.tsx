@@ -28,11 +28,6 @@ export default function Footer() {
             <li><a href="#" className="hover:underline">{t('footer.social.facebook')}</a></li>
           </ul>
         </div>
-        <div>
-          <h3 className="font-semibold mb-2">{t('footer.contact.title')}</h3>
-          <p className="text-sm">{t('footer.contact.email')}</p>
-          <p className="text-sm">{t('footer.contact.phone')}</p>
-        </div>
       </div>
       <p className="text-center text-xs pb-4">{t('footer.copyright')}</p>
     </footer>

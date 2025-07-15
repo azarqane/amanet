@@ -6,7 +6,6 @@
     "features": "الميزات",
     "pricing": "الأسعار",
     "about": "حول",
-    "contact": "اتصل",
     "login": "تسجيل الدخول",
     "signup": "تجربة مجانية"
   },
@@ -127,13 +126,6 @@
       "cta": "اتصل بنا"
     }
   },
-  "contact": {
-    "title": "اتصل",
-    "name": "الاسم",
-    "email": "البريد الإلكتروني",
-    "message": "رسالة",
-    "submit": "إرسال"
-  },
   "footer": {
     "legal": {
       "title": "قانوني",
@@ -151,11 +143,6 @@
       "twitter": "تويتر",
       "linkedin": "لينكدإن",
       "facebook": "فيسبوك"
-    },
-    "contact": {
-      "title": "اتصل",
-      "email": "email@example.com",
-      "phone": "+33 1 23 45 67 89"
     },
     "copyright": "© 2024 أمانت"
   }
