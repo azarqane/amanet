@@ -9,7 +9,7 @@ export default function Home() {
   const [lang, setLang] = useState(i18n.language || 'fr');
 
   return (
-    <div className={lang === 'ar' ? 'rtl' : ''}>
+    <div dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <Head>
         <title>{t('pageTitle')}</title>
         <meta name="description" content={t('pageDescription')} />
@@ -49,7 +49,7 @@ export default function Home() {
               <option value="en">EN</option>
               <option value="ar">AR</option>
             </select>
-            <button className="text-sm px-3 py-1 text-left">{t('nav.login')}</button>
+            <button className="text-sm px-3 py-1 text-left rtl:text-right">{t('nav.login')}</button>
             <button className="bg-indigo-600 text-white px-3 py-1 rounded w-max">{t('nav.signup')}</button>
           </div>
         )}
