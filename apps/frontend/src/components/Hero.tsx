@@ -1,44 +1,29 @@
-import { BookOpenIcon } from '@heroicons/react/24/outline';
+import { useTranslation } from 'react-i18next';
 
 export default function Hero() {
+  const { t } = useTranslation();
   return (
     <section className="relative h-screen font-sans">
-          <img
-    src="/hero.png"
-    alt="Woman learning online"
-    className="absolute top-16 w-full h-full object-contain"
-  />
-
-      <nav className="relative z-10 flex justify-between items-center max-w-7xl mx-auto px-6 py-6 text-white text-lg">
-        <div className="flex items-center space-x-2">
-          <BookOpenIcon className="h-8 w-8 text-white" />
-          <span className="font-semibold text-xl">Amanet</span>
-        </div>
-        <div className="flex items-center space-x-6">
-          <a href="#features" className="hover:text-indigo-200">Features</a>
-          <a href="#pricing" className="hover:text-indigo-200">Pricing</a>
-          <a href="#about" className="hover:text-indigo-200">About</a>
-          <button className="ml-4">Log in</button>
-          <button className="ml-4 rounded-full bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white">
-            Sign up
-          </button>
-        </div>
-      </nav>
-
-      <div className="relative z-10 flex flex-col items-start justify-center h-full text-left px-6 -mt-8 md:-mt-16">
+      <img
+        src="/hero.png"
+        alt={t('hero.imageAlt')}
+        className="absolute top-16 w-full h-full object-contain"
+      />
+      <div className="relative z-10 flex flex-col items-start justify-center h-full text-left px-6">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
-          Empower Your
-          <br />
-          Learning
+          {t('hero.title')}
         </h1>
         <p className="text-lg md:text-2xl text-gray-200 mb-8">
-          Take your skills to the next level
-          <br />
-          with our online courses.
+          {t('hero.subtitle')}
         </p>
-        <button className="rounded-full bg-blue-600 hover:bg-blue-700 px-8 py-4 text-white text-lg md:text-xl">
-          Get Started
-        </button>
+        <div className="space-x-4">
+          <button className="rounded-full bg-blue-600 hover:bg-blue-700 px-8 py-4 text-white text-lg md:text-xl">
+            {t('hero.ctaPrimary')}
+          </button>
+          <button className="rounded-full border border-white px-8 py-4 text-white text-lg md:text-xl hover:bg-blue-700">
+            {t('hero.ctaSecondary')}
+          </button>
+        </div>
       </div>
     </section>
   );

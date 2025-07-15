@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useTranslation } from 'react-i18next';
 import Hero from '../components/Hero';
+import Navbar from '../components/Navbar';
 import Who from '../components/Who';
 import Features from '../components/Features';
 import Disciplines from '../components/Disciplines';
@@ -19,6 +20,7 @@ export default function Home() {
         <title>{t('pageTitle')}</title>
         <meta name="description" content={t('pageDescription')} />
       </Head>
+      <Navbar />
       <main className="space-y-24">
         <Hero />
         <Who />
