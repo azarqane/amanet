@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply font-sans;
+  }
+  .rtl {
+    @apply font-arabic;
+    direction: rtl;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
-.rtl { direction: rtl; }

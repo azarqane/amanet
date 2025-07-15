@@ -5,7 +5,12 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Poppins', 'Inter', 'sans-serif'],
+        arabic: ['Tajawal', 'Cairo', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
