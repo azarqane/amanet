@@ -4,7 +4,7 @@ export default function Hero() {
   const { t } = useTranslation();
   return (
     <section className="text-center py-20" data-aos="fade-up">
-      <img src="/illustration.svg" alt={t('hero.imageAlt')} className="mx-auto mb-8 max-w-md" />
+      <img src="/hero.png" alt={t('hero.imageAlt')} className="mx-auto mb-8 max-w-md" />
       <h1 className="text-3xl sm:text-5xl font-bold mb-6 max-w-4xl mx-auto">{t('hero.title')}</h1>
       <p className="max-w-3xl mx-auto mb-8 text-lg text-gray-600">{t('hero.subtitle')}</p>
       <div className="flex justify-center gap-4">

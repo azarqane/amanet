@@ -11,8 +11,8 @@ module.exports = {
         arabic: ['Tajawal', 'Cairo', 'sans-serif'],
       },
       colors: {
-        primary: '#818cf8',
-        'primary-dark': '#6366f1',
+        primary: '#4f46e5',
+        'primary-dark': '#4f46e5',
         background: '#f9fafb',
         surface: '#ffffff',
         muted: '#f3f4f6',
