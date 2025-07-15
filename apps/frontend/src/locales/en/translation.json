@@ -6,7 +6,6 @@
     "features": "Features",
     "pricing": "Pricing",
     "about": "About",
-    "contact": "Contact",
     "login": "Login",
     "signup": "Free Trial"
   },
@@ -127,13 +126,6 @@
       "cta": "Contact us"
     }
   },
-  "contact": {
-    "title": "Contact",
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "submit": "Send"
-  },
   "footer": {
     "legal": {
       "title": "Legal",
@@ -151,11 +143,6 @@
       "twitter": "Twitter",
       "linkedin": "LinkedIn",
       "facebook": "Facebook"
-    },
-    "contact": {
-      "title": "Contact",
-      "email": "email@example.com",
-      "phone": "+33 1 23 45 67 89"
     },
     "copyright": "© 2024 Amanet"
   }

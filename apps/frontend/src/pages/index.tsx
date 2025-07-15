@@ -9,7 +9,6 @@ import Disciplines from '../components/Disciplines';
 import Why from '../components/Why';
 import Testimonials from '../components/Testimonials';
 import Pricing from '../components/Pricing';
-import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 
 export default function Home() {
@@ -34,7 +33,6 @@ export default function Home() {
             <a href="#features" className="hover:text-primary">{t('nav.features')}</a>
             <a href="#pricing" className="hover:text-primary">{t('nav.pricing')}</a>
             <a href="#about" className="hover:text-primary">{t('nav.about')}</a>
-            <a href="#contact" className="hover:text-primary">{t('nav.contact')}</a>
             <select value={lang} onChange={e => { const val = e.target.value; setLang(val); i18n.changeLanguage(val); }} className="border rounded px-1 py-0.5">
               <option value="fr">FR</option>
               <option value="en">EN</option>
@@ -52,7 +50,6 @@ export default function Home() {
             <a href="#features" className="hover:text-primary">{t('nav.features')}</a>
             <a href="#pricing" className="hover:text-primary">{t('nav.pricing')}</a>
             <a href="#about" className="hover:text-primary">{t('nav.about')}</a>
-            <a href="#contact" className="hover:text-primary">{t('nav.contact')}</a>
             <select value={lang} onChange={e => { const val = e.target.value; setLang(val); i18n.changeLanguage(val); }} className="border rounded px-1 py-0.5 w-max">
               <option value="fr">FR</option>
               <option value="en">EN</option>
@@ -72,7 +69,6 @@ export default function Home() {
         <Why />
         <Testimonials />
         <Pricing />
-        <ContactForm />
       </main>
 
       <Footer />
