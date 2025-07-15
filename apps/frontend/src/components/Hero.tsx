@@ -8,7 +8,6 @@ export default function Hero() {
         alt="Woman learning online"
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/70 via-indigo-700/60 to-teal-500/50" />
 
       <nav className="relative z-10 flex justify-between items-center max-w-7xl mx-auto px-6 py-4 text-white">
         <div className="flex items-center space-x-2">
