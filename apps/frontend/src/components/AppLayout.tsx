@@ -17,8 +17,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
         <div
       className={
         (i18n.language === 'ar' ? 'font-arabic' : 'font-sans') +
-        " bg-[url('/background.png')] bg-cover bg-fixed"
-      }
+" bg-[url('/background.png')] bg-cover bg-fixed text-white"      }
     >
       <Background />
       {children}
