@@ -1,3 +1,5 @@
+import { BookOpenIcon } from '@heroicons/react/24/outline';
+
 export default function Hero() {
   return (
     <section className="relative h-screen font-sans">
@@ -9,7 +11,10 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/70 via-indigo-700/60 to-teal-500/50" />
 
       <nav className="relative z-10 flex justify-between items-center max-w-7xl mx-auto px-6 py-4 text-white">
-        <span className="font-semibold text-lg">Amanet</span>
+        <div className="flex items-center space-x-2">
+          <BookOpenIcon className="h-6 w-6 text-white" />
+          <span className="font-semibold text-lg">Amanet</span>
+        </div>
         <div className="flex items-center space-x-6">
           <a href="#features" className="hover:text-indigo-200">Features</a>
           <a href="#pricing" className="hover:text-indigo-200">Pricing</a>
@@ -21,7 +26,7 @@ export default function Hero() {
         </div>
       </nav>
 
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+      <div className="relative z-10 flex flex-col items-start justify-center h-full text-left px-6">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">Empower Your Learning</h1>
         <p className="text-lg md:text-2xl text-gray-200 mb-8">
           Take your skills to the next level with our online courses.
