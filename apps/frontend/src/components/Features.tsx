@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 export default function Features() {
   const { t } = useTranslation();
   return (
-    <section className="bg-gray-50 py-16" id="features" data-aos="fade-up">
+    <section className="py-16" id="features" data-aos="fade-up">
       <h2 className="text-2xl font-bold text-center mb-8">{t('features.title')}</h2>
       <div className="max-w-5xl mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
