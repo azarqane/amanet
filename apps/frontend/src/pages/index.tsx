@@ -1,9 +1,13 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Bars3Icon, XMarkIcon, AcademicCapIcon, UserGroupIcon, BuildingLibraryIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon, AcademicCapIcon, UserGroupIcon, BuildingLibraryIcon, CheckCircleIcon, MoonIcon, SunIcon } from '@heroicons/react/24/outline';
 
-export default function Home() {
+interface HomeProps {
+  theme: 'light' | 'dark';
+  setTheme: React.Dispatch<React.SetStateAction<'light' | 'dark'>>;
+}
+export default function Home({ theme, setTheme }: HomeProps) {
   const { t, i18n } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [lang, setLang] = useState(i18n.language || 'fr');
@@ -15,7 +19,7 @@ export default function Home() {
         <meta name="description" content={t('pageDescription')} />
       </Head>
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 bg-white shadow z-20">
+      <header className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 shadow z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
             <AcademicCapIcon className="h-8 w-8 text-indigo-600" />
@@ -31,6 +35,9 @@ export default function Home() {
               <option value="en">EN</option>
               <option value="ar">AR</option>
             </select>
+            <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} className="p-1 rounded">
+              {theme === 'dark' ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
+            </button>
             <button className="text-sm px-3 py-1">{t('nav.login')}</button>
             <button className="bg-indigo-600 text-white px-3 py-1 rounded">{t('nav.signup')}</button>
           </nav>
@@ -49,6 +56,9 @@ export default function Home() {
               <option value="en">EN</option>
               <option value="ar">AR</option>
             </select>
+            <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} className="p-1 rounded w-max">
+              {theme === 'dark' ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
+            </button>
             <button className="text-sm px-3 py-1 text-left">{t('nav.login')}</button>
             <button className="bg-indigo-600 text-white px-3 py-1 rounded w-max">{t('nav.signup')}</button>
           </div>
@@ -57,13 +67,13 @@ export default function Home() {
 
       <main className="pt-20 space-y-24">
         {/* Hero Section */}
-        <section className="text-center py-20 bg-gray-50" data-aos="fade-up">
+        <section className="text-center py-20 bg-gray-50 dark:bg-gray-800" data-aos="fade-up">
           <img src="/illustration.svg" alt={t('hero.imageAlt')} className="mx-auto mb-8 max-w-md" />
           <h1 className="text-3xl sm:text-5xl font-bold mb-6 max-w-4xl mx-auto">{t('hero.title')}</h1>
-          <p className="max-w-3xl mx-auto mb-8 text-lg text-gray-600">{t('hero.subtitle')}</p>
+          <p className="max-w-3xl mx-auto mb-8 text-lg text-gray-600 dark:text-gray-300">{t('hero.subtitle')}</p>
           <div className="flex justify-center gap-4">
             <a href="#" className="bg-indigo-600 text-white px-6 py-3 rounded">{t('hero.ctaPrimary')}</a>
-            <a href="#" className="bg-gray-200 text-gray-900 px-6 py-3 rounded">{t('hero.ctaSecondary')}</a>
+            <a href="#" className="bg-gray-200 text-gray-900 px-6 py-3 rounded dark:bg-gray-700 dark:text-gray-100">{t('hero.ctaSecondary')}</a>
           </div>
         </section>
 
@@ -90,7 +100,7 @@ export default function Home() {
         </section>
 
         {/* Features Section */}
-        <section className="bg-gray-50 py-16" id="features" data-aos="fade-up">
+        <section className="bg-gray-50 dark:bg-gray-800 py-16" id="features" data-aos="fade-up">
           <h2 className="text-2xl font-bold text-center mb-8">{t('features.title')}</h2>
           <div className="max-w-5xl mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-8">
@@ -137,11 +147,11 @@ export default function Home() {
             <div className="flex flex-col items-center"><span className="text-3xl">💻</span>{t('disciplines.computer')}</div>
             <div className="flex flex-col items-center"><span className="text-3xl">🎨</span>{t('disciplines.arts')}</div>
           </div>
-          <p className="text-center mt-6 text-gray-600">{t('disciplines.tagline')}</p>
+          <p className="text-center mt-6 text-gray-600 dark:text-gray-300">{t('disciplines.tagline')}</p>
         </section>
 
         {/* Why Section */}
-        <section className="bg-gray-50 py-16" data-aos="fade-up">
+        <section className="bg-gray-50 dark:bg-gray-800 py-16" data-aos="fade-up">
           <h2 className="text-2xl font-bold text-center mb-8">{t('why.title')}</h2>
           <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-8 px-4 text-center">
             <div>
@@ -187,7 +197,7 @@ export default function Home() {
         </section>
 
         {/* Pricing */}
-        <section className="bg-gray-50 py-16" id="pricing" data-aos="fade-up">
+        <section className="bg-gray-50 dark:bg-gray-800 py-16" id="pricing" data-aos="fade-up">
           <h2 className="text-2xl font-bold text-center mb-8">{t('pricing.title')}</h2>
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-4">
             <div className="border rounded-lg p-6 text-center flex flex-col">
@@ -234,7 +244,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-gray-900 text-gray-300 mt-24" data-aos="fade-up">
+      <footer className="bg-gray-900 dark:bg-gray-950 text-gray-300 mt-24" data-aos="fade-up">
         <div className="max-w-6xl mx-auto py-12 px-4 grid md:grid-cols-4 gap-8">
           <div>
             <h3 className="font-semibold mb-2">{t('footer.legal.title')}</h3>
