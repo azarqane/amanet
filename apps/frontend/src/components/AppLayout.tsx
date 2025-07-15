@@ -1,5 +1,6 @@
 import { ReactNode, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import Background from './Background';
 
 interface AppLayoutProps {
   children: ReactNode;
@@ -14,6 +15,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
 
   return (
     <div className={i18n.language === 'ar' ? 'font-arabic' : 'font-sans'}>
+      <Background />
       {children}
     </div>
   );
