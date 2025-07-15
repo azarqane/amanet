@@ -3,11 +3,11 @@ import { BookOpenIcon } from '@heroicons/react/24/outline';
 export default function Hero() {
   return (
     <section className="relative h-screen font-sans">
-      <img
-        src="/hero.png"
-        alt="Woman learning online"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+          <img
+    src="/hero.png"
+    alt="Woman learning online"
+    className="absolute top-16 w-full h-full object-contain"
+  />
 
       <nav className="relative z-10 flex justify-between items-center max-w-7xl mx-auto px-6 py-6 text-white text-lg">
         <div className="flex items-center space-x-2">
