@@ -9,10 +9,10 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      <nav className="relative z-10 flex justify-between items-center max-w-7xl mx-auto px-6 py-4 text-white">
+      <nav className="relative z-10 flex justify-between items-center max-w-7xl mx-auto px-6 py-6 text-white text-lg">
         <div className="flex items-center space-x-2">
-          <BookOpenIcon className="h-6 w-6 text-white" />
-          <span className="font-semibold text-lg">Amanet</span>
+          <BookOpenIcon className="h-8 w-8 text-white" />
+          <span className="font-semibold text-xl">Amanet</span>
         </div>
         <div className="flex items-center space-x-6">
           <a href="#features" className="hover:text-indigo-200">Features</a>
@@ -25,7 +25,7 @@ export default function Hero() {
         </div>
       </nav>
 
-      <div className="relative z-10 flex flex-col items-start justify-center h-full text-left px-6">
+      <div className="relative z-10 flex flex-col items-start justify-center h-full text-left px-6 -mt-8 md:-mt-16">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
           Empower Your
           <br />
