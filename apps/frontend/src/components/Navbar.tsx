@@ -58,7 +58,7 @@ export default function Navbar() {
               {t('nav.login')}
             </button>
           </Link>
-          <Link href="/signup" className="rounded-full bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white">
+          <Link href="/auth/signup" className="rounded-full bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white">
             {t('nav.signup')}
           </Link>
           <select
