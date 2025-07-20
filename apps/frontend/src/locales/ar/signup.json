@@ -20,6 +20,6 @@
     "chooseRoleHint": "هل أنت مؤسسة/شركة أم متعلم؟",
     "checkEmailTitle": "تحقق من بريدك الإلكتروني",
     "checkEmailSubtitle": "لقد أرسلنا رابط تأكيد إلى بريدك الإلكتروني.",
-    "loginHref": "/login"
+    "loginHref": "/auth/login"
   }
 }

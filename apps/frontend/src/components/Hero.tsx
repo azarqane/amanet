@@ -20,7 +20,7 @@ export default function Hero() {
             <button className="rounded-full bg-blue-600 hover:bg-blue-700 px-6 py-3 text-white text-lg md:text-xl">
               {t('hero.ctaPrimary')}
             </button>
-            <Link href="/signup" className="rounded-full border border-white px-6 py-3 text-white text-lg md:text-xl">
+            <Link href="/auth/signup" className="rounded-full border border-white px-6 py-3 text-white text-lg md:text-xl">
               {t('hero.ctaSecondary')}
             </Link>
           </div>
