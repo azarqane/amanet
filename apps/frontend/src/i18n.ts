@@ -9,16 +9,19 @@ import arHome from './locales/ar/home.json';
 import enSignup from './locales/en/signup.json';
 import frSignup from './locales/fr/signup.json';
 import arSignup from './locales/ar/signup.json';
+import enLogin from './locales/en/login.json';
+import frLogin from './locales/fr/login.json';
+import arLogin from './locales/ar/login.json';
 
 i18n
   .use(initReactI18next)
   .init({
     resources: {
-      en: { common: enCommon, home: enHome, signup: enSignup },
-      fr: { common: frCommon, home: frHome, signup: frSignup },
-      ar: { common: arCommon, home: arHome, signup: arSignup },
+      en: { common: enCommon, home: enHome, signup: enSignup, login: enLogin },
+      fr: { common: frCommon, home: frHome, signup: frSignup, login: frLogin },
+      ar: { common: arCommon, home: arHome, signup: arSignup, login: arLogin },
     },
-    ns: ['common', 'home', 'signup'],
+    ns: ['common', 'home', 'signup', 'login'],
     defaultNS: 'common',
     lng:
       typeof window !== 'undefined'
