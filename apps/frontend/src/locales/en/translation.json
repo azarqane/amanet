@@ -126,6 +126,15 @@
       "cta": "Contact us"
     }
   },
+  "auth": {
+    "chooseRole": "Are you an institution/company or a learner?",
+    "institution": "Institution/Company",
+    "learner": "Learner",
+    "email": "Email",
+    "password": "Password",
+    "register": "Create an account",
+    "login": "Log in"
+  },
   "footer": {
     "legal": {
       "title": "Legal",
