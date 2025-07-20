@@ -1,0 +1,30 @@
+{
+  "siteTitle": "Amanet",
+  "nav": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "about": "About",
+    "login": "Login",
+    "signup": "Free Trial"
+  },
+  "footer": {
+    "legal": {
+      "title": "Legal",
+      "terms": "Terms",
+      "privacy": "Privacy policy"
+    },
+    "links": {
+      "title": "Useful links",
+      "support": "Support",
+      "docs": "Documentation",
+      "blog": "Blog"
+    },
+    "social": {
+      "title": "Social networks",
+      "twitter": "Twitter",
+      "linkedin": "LinkedIn",
+      "facebook": "Facebook"
+    },
+    "copyright": "© 2024 Amanet"
+  }
+}

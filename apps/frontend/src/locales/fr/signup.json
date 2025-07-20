@@ -1,0 +1,17 @@
+{
+  "auth": {
+    "chooseRole": "Êtes-vous un établissement/entreprise ou un apprenant ?",
+    "institution": "Établissement/Entreprise",
+    "learner": "Apprenant",
+    "email": "Email",
+    "password": "Mot de passe",
+    "register": "Créer un compte",
+    "login": "Se connecter",
+    "createAccountTitle": "Créez votre compte",
+    "signUpAs": "Inscrivez-vous en tant que {{role}}",
+    "institutionName": "Nom de l'établissement",
+    "name": "Nom",
+    "back": "Retour",
+    "alreadyAccount": "Vous avez déjà un compte ?"
+  }
+}

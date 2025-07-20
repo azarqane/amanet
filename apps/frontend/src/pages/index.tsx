@@ -11,7 +11,7 @@ import Pricing from '../components/Pricing';
 import Footer from '../components/Footer';
 
 export default function Home() {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('home');
   const lang = i18n.language || 'fr';
 
   return (

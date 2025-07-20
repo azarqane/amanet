@@ -1,0 +1,17 @@
+{
+  "auth": {
+    "chooseRole": "هل أنت مؤسسة/شركة أم متعلم؟",
+    "institution": "مؤسسة/شركة",
+    "learner": "متعلم",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "register": "إنشاء حساب",
+    "login": "تسجيل الدخول",
+    "createAccountTitle": "أنشئ حسابك",
+    "signUpAs": "سجّل كـ{{role}}",
+    "institutionName": "اسم المؤسسة",
+    "name": "الاسم",
+    "back": "رجوع",
+    "alreadyAccount": "لديك حساب بالفعل؟"
+  }
+}

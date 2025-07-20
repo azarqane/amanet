@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
 export default function Hero() {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('home');
   const dir = i18n.dir(); // "rtl" ou "ltr"
 
   return (

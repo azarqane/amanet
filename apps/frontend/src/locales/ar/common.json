@@ -1,0 +1,30 @@
+{
+  "siteTitle": "أمانت",
+  "nav": {
+    "features": "الميزات",
+    "pricing": "الأسعار",
+    "about": "حول",
+    "login": "تسجيل الدخول",
+    "signup": "تجربة مجانية"
+  },
+  "footer": {
+    "legal": {
+      "title": "قانوني",
+      "terms": "الشروط",
+      "privacy": "سياسة الخصوصية"
+    },
+    "links": {
+      "title": "روابط مفيدة",
+      "support": "الدعم",
+      "docs": "التوثيق",
+      "blog": "مدونة"
+    },
+    "social": {
+      "title": "وسائل التواصل",
+      "twitter": "تويتر",
+      "linkedin": "لينكدإن",
+      "facebook": "فيسبوك"
+    },
+    "copyright": "© 2024 أمانت"
+  }
+}

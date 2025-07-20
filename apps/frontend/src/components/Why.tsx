@@ -2,7 +2,7 @@ import { CheckCircleIcon } from '@heroicons/react/24/outline';
 import { useTranslation } from 'react-i18next';
 
 export default function Why() {
-  const { t } = useTranslation();
+  const { t } = useTranslation('home');
   return (
     <section className="py-16" data-aos="fade-up">
       <h2 className="text-2xl font-bold text-center mb-8">{t('why.title')}</h2>

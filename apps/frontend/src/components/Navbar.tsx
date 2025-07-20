@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useEffect, useState, type ChangeEvent } from 'react';
 
 export default function Navbar() {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('common');
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 

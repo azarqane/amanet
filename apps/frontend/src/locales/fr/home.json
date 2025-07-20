@@ -1,14 +1,6 @@
 {
-  "siteTitle": "Amanet",
   "pageTitle": "Plateforme E-learning Universelle",
   "pageDescription": "Créez et partagez des cours dans toutes les disciplines",
-  "nav": {
-    "features": "Fonctionnalités",
-    "pricing": "Tarifs",
-    "about": "À propos",
-    "login": "Connexion",
-    "signup": "Essai gratuit"
-  },
   "hero": {
     "title": "Accédez à plus de 3000 cours en ligne, sélectionnés parmi les meilleures formations de chaque domaine !",
     "subtitle": "Pour les établissements d'enseignement, les enseignants individuels et les apprenants",
@@ -125,40 +117,5 @@
       "feature2": "Fonctionnalités avancées",
       "cta": "Contactez-nous"
     }
-  },
-  "auth": {
-    "chooseRole": "Êtes-vous un établissement/entreprise ou un apprenant ?",
-    "institution": "Établissement/Entreprise",
-    "learner": "Apprenant",
-    "email": "Email",
-    "password": "Mot de passe",
-    "register": "Créer un compte",
-    "login": "Se connecter",
-    "createAccountTitle": "Créez votre compte",
-    "signUpAs": "Inscrivez-vous en tant que {{role}}",
-    "institutionName": "Nom de l'établissement",
-    "name": "Nom",
-    "back": "Retour",
-    "alreadyAccount": "Vous avez déjà un compte ?"
-  },
-  "footer": {
-    "legal": {
-      "title": "Légal",
-      "terms": "CGU",
-      "privacy": "Politique de confidentialité"
-    },
-    "links": {
-      "title": "Liens utiles",
-      "support": "Support",
-      "docs": "Documentation",
-      "blog": "Blog"
-    },
-    "social": {
-      "title": "Réseaux sociaux",
-      "twitter": "Twitter",
-      "linkedin": "LinkedIn",
-      "facebook": "Facebook"
-    },
-    "copyright": "© 2024 Amanet"
   }
 }
