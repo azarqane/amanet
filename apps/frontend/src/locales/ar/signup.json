@@ -12,6 +12,7 @@
     "institutionName": "اسم المؤسسة",
     "name": "الاسم",
     "back": "رجوع",
-    "alreadyAccount": "لديك حساب بالفعل؟"
+    "alreadyAccount": "لديك حساب بالفعل؟",
+    "signupSuccess": "تحقق من بريدك الإلكتروني لتأكيد حسابك."
   }
 }

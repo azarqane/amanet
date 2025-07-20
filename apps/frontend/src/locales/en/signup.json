@@ -12,6 +12,7 @@
     "institutionName": "Institution name",
     "name": "Name",
     "back": "Back",
-    "alreadyAccount": "Already have an account?"
+    "alreadyAccount": "Already have an account?",
+    "signupSuccess": "Check your email to confirm your account."
   }
 }

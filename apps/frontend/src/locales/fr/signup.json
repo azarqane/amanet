@@ -12,6 +12,7 @@
     "institutionName": "Nom de l'établissement",
     "name": "Nom",
     "back": "Retour",
-    "alreadyAccount": "Vous avez déjà un compte ?"
+    "alreadyAccount": "Vous avez déjà un compte ?",
+    "signupSuccess": "Vérifiez votre e-mail pour confirmer votre compte."
   }
 }
