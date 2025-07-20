@@ -23,12 +23,14 @@ export default function Signup() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setErrorMsg('');
+
     if (password !== confirmPassword) {
       setErrorMsg(t('auth.passwordMismatch'));
       return;
     }
+
     setLoading(true);
-    const { error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
@@ -42,17 +44,21 @@ export default function Signup() {
     setLoading(false);
 
     if (error) {
-      if (
+      const msg =
         error.message.toLowerCase().includes('already') ||
         error.message.toLowerCase().includes('exist')
-      ) {
-        setErrorMsg(t('auth.emailAlreadyUsed'));
-      } else {
-        setErrorMsg(error.message);
-      }
-    } else {
-      setStep(3);
+          ? t('auth.emailAlreadyUsed')
+          : error.message;
+      setErrorMsg(msg);
+      return;
     }
+
+    if (data.user?.identities?.length === 0) {
+      setErrorMsg(t('auth.emailAlreadyUsed'));
+      return;
+    }
+
+    setStep(3);
   };
 
   const RoleCard = ({
@@ -65,6 +71,7 @@ export default function Signup() {
     labelKey: string;
   }) => (
     <button
+      type="button"
       onClick={() => {
         setRole(value);
         setStep(2);
@@ -89,14 +96,11 @@ export default function Signup() {
         </Head>
 
         <div className="w-full max-w-lg bg-black/50 backdrop-blur-md p-8 rounded-xl shadow-xl">
-          {/* Progress bar */}
-            <div className="flex items-center mb-6 space-x-2 rtl:space-x-reverse">
+          <div className="flex items-center mb-6 space-x-2 rtl:space-x-reverse">
             {[1, 2, 3].map((s) => (
               <div key={s} className="flex-1 h-1 rounded-full overflow-hidden bg-gray-700">
                 <div
-                  className={`h-full ${
-                    step >= s ? 'bg-indigo-500' : ''
-                  } transition-all`}
+                  className={`h-full ${step >= s ? 'bg-indigo-500' : ''} transition-all`}
                   style={{ width: step >= s ? '100%' : '0%' }}
                 />
               </div>
@@ -123,17 +127,15 @@ export default function Signup() {
           {step === 2 && role && (
             <form className="space-y-5" onSubmit={handleSubmit} noValidate>
               <h2 className="text-2xl font-semibold text-center">
-                {t('auth.signUpAs', {
-                  role: role === 'institution'
-                    ? t('auth.institution')
-                    : t('auth.learner'),
-                })}
+                {t('auth.signUpAs', { role: role === 'institution' ? t('auth.institution') : t('auth.learner') })}
               </h2>
 
               {role === 'institution' && (
                 <div>
-                  <label className="block mb-1 text-sm">{t('auth.institutionName')}</label>
+                  <label htmlFor="institutionName" className="block mb-1 text-sm">{t('auth.institutionName')}</label>
                   <input
+                    id="institutionName"
+                    name="institutionName"
                     type="text"
                     value={institutionName}
                     onChange={(e) => setInstitutionName(e.target.value)}
@@ -144,8 +146,10 @@ export default function Signup() {
               )}
 
               <div>
-                <label className="block mb-1 text-sm">{t('auth.name')}</label>
+                <label htmlFor="name" className="block mb-1 text-sm">{t('auth.name')}</label>
                 <input
+                  id="name"
+                  name="name"
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -155,8 +159,10 @@ export default function Signup() {
               </div>
 
               <div>
-                <label className="block mb-1 text-sm">{t('auth.email')}</label>
+                <label htmlFor="email" className="block mb-1 text-sm">{t('auth.email')}</label>
                 <input
+                  id="email"
+                  name="email"
                   type="email"
                   autoComplete="email"
                   value={email}
@@ -167,9 +173,11 @@ export default function Signup() {
               </div>
 
               <div>
-                <label className="block mb-1 text-sm">{t('auth.password')}</label>
+                <label htmlFor="password" className="block mb-1 text-sm">{t('auth.password')}</label>
                 <div className="relative">
                   <input
+                    id="password"
+                    name="password"
                     type={showPwd ? 'text' : 'password'}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -188,9 +196,11 @@ export default function Signup() {
               </div>
 
               <div>
-                <label className="block mb-1 text-sm">{t('auth.confirmPassword')}</label>
+                <label htmlFor="confirmPassword" className="block mb-1 text-sm">{t('auth.confirmPassword')}</label>
                 <div className="relative">
                   <input
+                    id="confirmPassword"
+                    name="confirmPassword"
                     type={showConfirmPwd ? 'text' : 'password'}
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
@@ -208,21 +218,17 @@ export default function Signup() {
                 </div>
               </div>
 
-              {errorMsg && (
-                <p className="text-sm text-center text-red-400">{errorMsg}</p>
-              )}
+              {errorMsg && <p className="text-sm text-center text-red-400">{errorMsg}</p>}
 
               <button
                 type="submit"
                 disabled={loading}
                 className={`
-                  w-full flex justify-center items-center space-x-2 py-3 rounded-lg text-white 
-                  ${loading ? 'bg-indigo-400 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700'}
-                `}
+                  w-full flex justify-center items-center space-x-2 py-3 rounded-lg text-white ` +
+                  `${loading ? 'bg-indigo-400 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700'}`
+                }
               >
-                {loading && (
-                  <span className="loader-border loader-border-white animate-spin rounded-full w-5 h-5" />
-                )}
+                {loading && <span className="loader-border loader-border-white animate-spin rounded-full w-5 h-5" />}
                 <span>{t('auth.register')}</span>
               </button>
 
