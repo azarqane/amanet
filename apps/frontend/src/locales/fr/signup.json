@@ -13,6 +13,10 @@
     "name": "Nom",
     "back": "Retour",
     "alreadyAccount": "Vous avez déjà un compte ?",
-    "signupSuccess": "Vérifiez votre e-mail pour confirmer votre compte."
+    "signupSuccess": "Vérifiez votre e-mail pour confirmer votre compte.",
+    "chooseRoleHint": "Êtes-vous un établissement/entreprise ou un apprenant ?",
+    "checkEmailTitle": "Vérifiez votre e-mail",
+    "checkEmailSubtitle": "Nous vous avons envoyé un lien pour confirmer votre compte.",
+    "loginHref": "/login"
   }
 }
