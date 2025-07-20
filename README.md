@@ -7,5 +7,5 @@ Le frontend utilise la librairie `i18next` pour la gestion des traductions. Les 
 import i18n from './i18n'; // initialisation
 ```
 
-Les langues disponibles sont le français (`fr`), l'anglais (`en`) et l'arabe (`ar`).
-Le changement de langue se fait en appelant `i18next.changeLanguage('fr' | 'en' | 'ar')`.
+Les langues disponibles sont le français (`fr`), l'anglais (`en`), l'arabe (`ar`) et le tifinagh (`tf`).
+Le changement de langue se fait en appelant `i18next.changeLanguage('fr' | 'en' | 'ar' | 'tf')`.

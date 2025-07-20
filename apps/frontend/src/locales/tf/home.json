@@ -1,0 +1,121 @@
+{
+  "pageTitle": "Plateforme E-learning Universelle",
+  "pageDescription": "Créez et partagez des cours dans toutes les disciplines",
+  "hero": {
+    "title": "Accédez à plus de 3000 cours en ligne, sélectionnés parmi les meilleures formations de chaque domaine !",
+    "subtitle": "Pour les établissements d'enseignement, les enseignants individuels et les apprenants",
+    "imageAlt": "Mockup de l'interface",
+    "ctaPrimary": "Créer mon établissement",
+    "ctaSecondary": "Commencer gratuitement"
+  },
+  "who": {
+    "title": "Qui peut utiliser notre plateforme ?",
+    "schools": {
+      "title": "Établissements d'enseignement",
+      "desc": "Écoles, universités et centres de formation"
+    },
+    "teachers": {
+      "title": "Enseignants indépendants",
+      "desc": "Professeurs, formateurs et experts"
+    },
+    "learners": {
+      "title": "Apprenants",
+      "desc": "Étudiants, professionnels, autodidactes"
+    }
+  },
+  "features": {
+    "title": "Fonctionnalités par type d'utilisateur",
+    "schools": {
+      "title": "Pour les établissements",
+      "item1": "Création de cours privés",
+      "item2": "Gestion des classes et promotions",
+      "item3": "Création d'exercices et évaluations",
+      "item4": "Tableau de bord administratif",
+      "item5": "Suivi des performances des étudiants"
+    },
+    "teachers": {
+      "title": "Pour les enseignants individuels",
+      "item1": "Création de cours publics gratuits",
+      "item2": "Éditeur Markdown avec rendu stylisé",
+      "item3": "Partage communautaire",
+      "item4": "Statistiques d'engagement"
+    },
+    "learners": {
+      "title": "Pour les apprenants",
+      "item1": "Accès aux cours de leur établissement",
+      "item2": "Découverte de cours publics gratuits",
+      "item3": "Suivi de progression personnalisé",
+      "item4": "Certificats et badges"
+    }
+  },
+  "disciplines": {
+    "title": "Toutes les disciplines couvertes",
+    "math": "Mathématiques",
+    "science": "Sciences",
+    "languages": "Langues",
+    "history": "Histoire",
+    "computer": "Informatique",
+    "arts": "Arts",
+    "tagline": "Quel que soit votre domaine d'expertise"
+  },
+  "why": {
+    "title": "Pourquoi choisir notre plateforme ?",
+    "flexibility": {
+      "title": "Flexibilité",
+      "desc": "Établissements privés et cours publics gratuits"
+    },
+    "ease": {
+      "title": "Facilité d'utilisation",
+      "desc": "Éditeur Markdown intuitif"
+    },
+    "security": {
+      "title": "Sécurité",
+      "desc": "Authentification robuste, données protégées"
+    },
+    "scalability": {
+      "title": "Évolutivité",
+      "desc": "De quelques étudiants à des milliers"
+    }
+  },
+  "testimonials": {
+    "title": "Ils en parlent",
+    "item1": {
+      "quote": "Grâce à cette plateforme, nous avons modernisé nos cours et suivi la progression de nos étudiants en temps réel.",
+      "author": "Jean Dupont, Directeur d'université"
+    },
+    "item2": {
+      "quote": "J'ai pu partager mes connaissances avec des milliers d'apprenants facilement.",
+      "author": "Sarah Martin, Enseignante indépendante"
+    },
+    "item3": {
+      "quote": "Les cours sont accessibles partout et les badges motivent vraiment !",
+      "author": "Karim Ali, Étudiant"
+    }
+  },
+  "pricing": {
+    "title": "Tarifs",
+    "free": {
+      "label": "Gratuit",
+      "desc": "Pour enseignants individuels",
+      "price": "0€",
+      "feature1": "Cours publics illimités",
+      "cta": "Commencer"
+    },
+    "starter": {
+      "label": "Établissement Starter",
+      "desc": "Pour petites écoles",
+      "price": "49€/mois",
+      "feature1": "Jusqu'à 200 étudiants",
+      "feature2": "Cours privés illimités",
+      "cta": "S'abonner"
+    },
+    "pro": {
+      "label": "Établissement Pro",
+      "desc": "Pour universités",
+      "price": "199€/mois",
+      "feature1": "Étudiants illimités",
+      "feature2": "Fonctionnalités avancées",
+      "cta": "Contactez-nous"
+    }
+  }
+}

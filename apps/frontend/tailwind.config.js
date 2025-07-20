@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
         sans: ['Poppins', 'Inter', 'sans-serif'],
         arabic: ['Tajawal', 'Cairo', 'sans-serif'],
+        tifinagh: ['\"Noto Sans Tifinagh\"', 'sans-serif'],
       },
       colors: {
         primary: '#4f46e5',
