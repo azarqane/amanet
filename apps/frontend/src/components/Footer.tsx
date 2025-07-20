@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   return (
     <footer className="bg-gray-900 text-gray-300 mt-24" data-aos="fade-up">
       <div className="max-w-6xl mx-auto py-12 px-4 grid md:grid-cols-4 gap-8">

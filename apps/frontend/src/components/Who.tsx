@@ -2,7 +2,7 @@ import { AcademicCapIcon, UserGroupIcon, BuildingLibraryIcon } from '@heroicons/
 import { useTranslation } from 'react-i18next';
 
 export default function Who() {
-  const { t } = useTranslation();
+  const { t } = useTranslation('home');
   return (
     <section className="max-w-6xl mx-auto px-4" data-aos="fade-up" id="about">
       <h2 className="text-2xl font-bold text-center mb-8">{t('who.title')}</h2>

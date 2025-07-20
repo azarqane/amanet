@@ -1,14 +1,6 @@
 {
-  "siteTitle": "Amanet",
   "pageTitle": "Universal E-learning Platform",
   "pageDescription": "Create and share courses in every field",
-  "nav": {
-    "features": "Features",
-    "pricing": "Pricing",
-    "about": "About",
-    "login": "Login",
-    "signup": "Free Trial"
-  },
   "hero": {
     "title": "Access over 3000 online courses, handpicked from the best training programs in every field!",
     "subtitle": "For institutions, independent teachers, and learners",
@@ -125,40 +117,5 @@
       "feature2": "Advanced features",
       "cta": "Contact us"
     }
-  },
-  "auth": {
-    "chooseRole": "Are you an institution/company or a learner?",
-    "institution": "Institution/Company",
-    "learner": "Learner",
-    "email": "Email",
-    "password": "Password",
-    "register": "Create an account",
-    "login": "Log in",
-    "createAccountTitle": "Create your account",
-    "signUpAs": "Sign up as {{role}}",
-    "institutionName": "Institution name",
-    "name": "Name",
-    "back": "Back",
-    "alreadyAccount": "Already have an account?"
-  },
-  "footer": {
-    "legal": {
-      "title": "Legal",
-      "terms": "Terms",
-      "privacy": "Privacy policy"
-    },
-    "links": {
-      "title": "Useful links",
-      "support": "Support",
-      "docs": "Documentation",
-      "blog": "Blog"
-    },
-    "social": {
-      "title": "Social networks",
-      "twitter": "Twitter",
-      "linkedin": "LinkedIn",
-      "facebook": "Facebook"
-    },
-    "copyright": "© 2024 Amanet"
   }
 }

@@ -1,17 +1,25 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import en from './locales/en/translation.json';
-import fr from './locales/fr/translation.json';
-import ar from './locales/ar/translation.json';
+import enCommon from './locales/en/common.json';
+import frCommon from './locales/fr/common.json';
+import arCommon from './locales/ar/common.json';
+import enHome from './locales/en/home.json';
+import frHome from './locales/fr/home.json';
+import arHome from './locales/ar/home.json';
+import enSignup from './locales/en/signup.json';
+import frSignup from './locales/fr/signup.json';
+import arSignup from './locales/ar/signup.json';
 
 i18n
   .use(initReactI18next)
   .init({
     resources: {
-      en: { translation: en },
-      fr: { translation: fr },
-      ar: { translation: ar },
+      en: { common: enCommon, home: enHome, signup: enSignup },
+      fr: { common: frCommon, home: frHome, signup: frSignup },
+      ar: { common: arCommon, home: arHome, signup: arSignup },
     },
+    ns: ['common', 'home', 'signup'],
+    defaultNS: 'common',
     lng:
       typeof window !== 'undefined'
         ? localStorage.getItem('lang') || 'fr'

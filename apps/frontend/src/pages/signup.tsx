@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 export default function Signup() {
   const [role, setRole] = useState<'institution' | 'learner' | null>(null);
   const [step, setStep] = useState(1);
-  const { t } = useTranslation();
+  const { t } = useTranslation('signup');
 
   return (
     <AppLayout>

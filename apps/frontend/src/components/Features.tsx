@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 export default function Features() {
-  const { t } = useTranslation();
+  const { t } = useTranslation('home');
   return (
     <section className="py-16" id="features" data-aos="fade-up">
       <h2 className="text-2xl font-bold text-center mb-8">{t('features.title')}</h2>
