@@ -12,11 +12,21 @@ i18n
       fr: { translation: fr },
       ar: { translation: ar },
     },
-    lng: 'fr',
+    lng:
+      typeof window !== 'undefined'
+        ? localStorage.getItem('lang') || 'fr'
+        : 'fr',
     fallbackLng: 'fr',
     interpolation: {
       escapeValue: false,
     },
   });
+
+// Persist language changes in the browser
+if (typeof window !== 'undefined') {
+  i18n.on('languageChanged', (lng) => {
+    localStorage.setItem('lang', lng);
+  });
+}
 
 export default i18n;
