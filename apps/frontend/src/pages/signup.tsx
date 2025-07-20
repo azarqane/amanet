@@ -77,8 +77,8 @@ export default function Signup() {
         setStep(2);
       }}
       className={`
-        flex-1 flex flex-col items-center p-6 rounded-lg border-2 
-        ${role === value ? 'border-indigo-500 bg-indigo-50' : 'border-gray-300 hover:border-indigo-400'}
+        flex-1 flex flex-col items-center p-6 rounded-lg border-2
+        ${role === value ? 'border-indigo-500 bg-indigo-100' : 'border-gray-300 hover:border-indigo-400'}
         transition
       `}
       aria-pressed={role === value}
