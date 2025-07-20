@@ -1,9 +1,10 @@
 import { useState, type FormEvent } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import AppLayout from '../components/AppLayout';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '../utils/supabaseClient';
-import { FiHome, FiUser, FiBook, FiEye, FiEyeOff } from 'react-icons/fi';
+import { FiHome, FiBook, FiEye, FiEyeOff } from 'react-icons/fi';
 
 export default function Signup() {
   const [role, setRole] = useState<'institution' | 'learner' | null>(null);
@@ -13,13 +14,13 @@ export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPwd, setShowPwd] = useState(false);
-  const [message, setMessage] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
   const [loading, setLoading] = useState(false);
   const { t } = useTranslation('signup');
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setMessage('');
+    setErrorMsg('');
     setLoading(true);
     const { error } = await supabase.auth.signUp({
       email,
@@ -33,13 +34,28 @@ export default function Signup() {
       },
     });
     setLoading(false);
-    if (error) setMessage(error.message);
-    else setMessage(t('auth.signupSuccess'));
+
+    if (error) {
+      setErrorMsg(error.message);
+    } else {
+      setStep(3);
+    }
   };
 
-  const RoleCard = ({ value, icon, label }: { value: 'institution' | 'learner'; icon: JSX.Element; label: string }) => (
+  const RoleCard = ({
+    value,
+    icon,
+    labelKey,
+  }: {
+    value: 'institution' | 'learner';
+    icon: JSX.Element;
+    labelKey: string;
+  }) => (
     <button
-      onClick={() => { setRole(value); setStep(2); }}
+      onClick={() => {
+        setRole(value);
+        setStep(2);
+      }}
       className={`
         flex-1 flex flex-col items-center p-6 rounded-lg border-2 
         ${role === value ? 'border-indigo-500 bg-indigo-50' : 'border-gray-300 hover:border-indigo-400'}
@@ -48,35 +64,39 @@ export default function Signup() {
       aria-pressed={role === value}
     >
       <div className="text-3xl mb-2">{icon}</div>
-      <span className="font-medium">{label}</span>
+      <span className="font-medium">{t(labelKey)}</span>
     </button>
   );
 
   return (
-    <div className="min-h-screen flex items-center justify-center text-gray-100">
+    <AppLayout>
+      <div className="min-h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center text-gray-100">
         <Head>
           <title>{t('auth.createAccountTitle')}</title>
         </Head>
+
         <div className="w-full max-w-lg bg-black/50 backdrop-blur-md p-8 rounded-xl shadow-xl">
-          
           {/* Progress bar */}
-          <div className="flex items-center mb-6">
-            {[1,2].map((s) => (
-              <div key={s} className="flex-1">
+          <div className="flex items-center mb-6 space-x-2">
+            {[1, 2, 3].map((s) => (
+              <div key={s} className="flex-1 h-1 rounded-full overflow-hidden bg-gray-700">
                 <div
-                  className={`h-1 rounded-full ${step >= s ? 'bg-indigo-500' : 'bg-gray-700'}`}
+                  className={`h-full ${
+                    step >= s ? 'bg-indigo-500' : ''
+                  } transition-all`}
+                  style={{ width: step >= s ? '100%' : '0%' }}
                 />
               </div>
             ))}
           </div>
-          
+
           {step === 1 && (
             <div className="space-y-6 text-center">
               <h1 className="text-3xl font-bold">{t('auth.createAccountTitle')}</h1>
               <p className="text-sm opacity-80">{t('auth.chooseRoleHint')}</p>
               <div className="flex gap-4">
-                <RoleCard value="institution" icon={<FiHome />} label={t('auth.institution')} />
-                <RoleCard value="learner"    icon={<FiBook />} label={t('auth.learner')} />
+                <RoleCard value="institution" icon={<FiHome />} labelKey="auth.institution" />
+                <RoleCard value="learner" icon={<FiBook />} labelKey="auth.learner" />
               </div>
               <p className="text-sm">
                 {t('auth.alreadyAccount')}{' '}
@@ -90,7 +110,11 @@ export default function Signup() {
           {step === 2 && role && (
             <form className="space-y-5" onSubmit={handleSubmit} noValidate>
               <h2 className="text-2xl font-semibold text-center">
-                {t('auth.signUpAs', { role: role === 'institution' ? t('auth.institution') : t('auth.learner') })}
+                {t('auth.signUpAs', {
+                  role: role === 'institution'
+                    ? t('auth.institution')
+                    : t('auth.learner'),
+                })}
               </h2>
 
               {role === 'institution' && (
@@ -149,8 +173,8 @@ export default function Signup() {
                 </div>
               </div>
 
-              {message && (
-                <p className="text-sm text-center text-red-400">{message}</p>
+              {errorMsg && (
+                <p className="text-sm text-center text-red-400">{errorMsg}</p>
               )}
 
               <button
@@ -161,14 +185,19 @@ export default function Signup() {
                   ${loading ? 'bg-indigo-400 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700'}
                 `}
               >
-                {loading && <span className="loader-border loader-border-white animate-spin rounded-full w-5 h-5"/>}
+                {loading && (
+                  <span className="loader-border loader-border-white animate-spin rounded-full w-5 h-5" />
+                )}
                 <span>{t('auth.register')}</span>
               </button>
 
               <div className="flex justify-between items-center text-sm">
                 <button
                   type="button"
-                  onClick={() => { setStep(1); setMessage(''); }}
+                  onClick={() => {
+                    setStep(1);
+                    setErrorMsg('');
+                  }}
                   className="underline text-indigo-300 hover:text-indigo-100"
                 >
                   ← {t('auth.back')}
@@ -180,8 +209,19 @@ export default function Signup() {
             </form>
           )}
 
+          {step === 3 && (
+            <div className="space-y-6 text-center">
+              <h2 className="text-2xl font-semibold">{t('auth.checkEmailTitle')}</h2>
+              <p className="text-sm opacity-80">{t('auth.checkEmailSubtitle')}</p>
+              <p className="text-sm">
+                <Link href={t('auth.loginHref')} className="underline text-indigo-300 hover:text-indigo-100">
+                  {t('auth.login')}
+                </Link>
+              </p>
+            </div>
+          )}
         </div>
       </div>
-    </div>
+    </AppLayout>
   );
 }
