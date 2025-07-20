@@ -22,6 +22,7 @@ export default function Login() {
     setLoading(false);
     if (error) {
       setErrorMsg(error.message);
+
       return;
     }
     window.location.href = '/';
@@ -33,7 +34,6 @@ export default function Login() {
         <Head>
           <title>{t('auth.login')}</title>
         </Head>
-
         <form onSubmit={handleSubmit} className="w-full max-w-sm space-y-5 bg-black/50 backdrop-blur-md p-8 rounded-xl shadow-xl">
           <h1 className="text-3xl font-bold text-center">{t('auth.login')}</h1>
           <div>
