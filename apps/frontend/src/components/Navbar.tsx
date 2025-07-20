@@ -52,9 +52,11 @@ export default function Navbar() {
               {item.label}
             </a>
           ))}
-          <button className="rounded-full border border-blue-600 px-4 py-2">
-            {t('nav.login')}
-          </button>
+          <Link href="/auth/login">
+            <button className="rounded-full border border-blue-600 px-4 py-2">
+              {t('nav.login')}
+            </button>
+          </Link>
           <Link href="/signup" className="rounded-full bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white">
             {t('nav.signup')}
           </Link>
@@ -94,12 +96,13 @@ export default function Navbar() {
             </li>
           ))}
           <li>
-            <button
-              onClick={handleItemClick}
-              className="w-full text-start rounded-full border border-blue-600 px-4 py-2"
-            >
-              {t('nav.login')}
-            </button>
+            <Link href="/auth/login" onClick={handleItemClick}>
+              <button
+                className="w-full text-start rounded-full border border-blue-600 px-4 py-2"
+              >
+                {t('nav.login')}
+              </button>
+            </Link>
           </li>
           <li>
             <Link
