@@ -52,6 +52,7 @@ export default function Navbar() {
               {item.label}
             </a>
           ))}
+
           <Link href="/auth/login">
             <button className="rounded-full border border-blue-600 px-4 py-2">
               {t('nav.login')}
@@ -106,7 +107,7 @@ export default function Navbar() {
           </li>
           <li>
             <Link
-              href="/signup"
+              href="/auth/signup"
               onClick={handleItemClick}
               className="w-full text-start rounded-full bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white"
             >

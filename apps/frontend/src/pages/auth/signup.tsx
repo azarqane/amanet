@@ -1,9 +1,9 @@
 import { useState, type FormEvent } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import AppLayout from '../components/AppLayout';
+import AppLayout from '../../components/AppLayout';
 import { useTranslation } from 'react-i18next';
-import { supabase } from '../utils/supabaseClient';
+import { supabase } from '../../utils/supabaseClient';
 import { FiHome, FiBook, FiEye, FiEyeOff } from 'react-icons/fi';
 
 export default function Signup() {
@@ -117,7 +117,7 @@ export default function Signup() {
               </div>
               <p className="text-sm">
                 {t('auth.alreadyAccount')}{' '}
-                <Link href="/login" className="underline text-indigo-300 hover:text-indigo-100">
+                <Link href="/auth/login" className="underline text-indigo-300 hover:text-indigo-100">
                   {t('auth.login')}
                 </Link>
               </p>
@@ -243,7 +243,7 @@ export default function Signup() {
                 >
                   ← {t('auth.back')}
                 </button>
-                <Link href="/login" className="underline text-indigo-300 hover:text-indigo-100">
+                <Link href="/auth/login" className="underline text-indigo-300 hover:text-indigo-100">
                   {t('auth.alreadyAccount')}
                 </Link>
               </div>
