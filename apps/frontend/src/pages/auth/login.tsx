@@ -22,7 +22,10 @@ export default function Login() {
     setLoading(false);
     if (error) {
       setErrorMsg(error.message);
+
+      return;
     }
+    window.location.href = '/';
   };
 
   return (
@@ -31,7 +34,7 @@ export default function Login() {
         <Head>
           <title>{t('auth.login')}</title>
         </Head>
-        <form className="w-full max-w-lg bg-black/50 backdrop-blur-md p-8 rounded-xl shadow-xl space-y-5" onSubmit={handleSubmit} noValidate>
+        <form onSubmit={handleSubmit} className="w-full max-w-sm space-y-5 bg-black/50 backdrop-blur-md p-8 rounded-xl shadow-xl">
           <h1 className="text-3xl font-bold text-center">{t('auth.login')}</h1>
           <div>
             <label htmlFor="email" className="block mb-1 text-sm">{t('auth.email')}</label>
@@ -78,7 +81,6 @@ export default function Login() {
             <span>{t('auth.login')}</span>
           </button>
           <p className="text-sm text-center">
-            {"Don't have an account?"}{' '}
             <Link href="/auth/signup" className="underline text-indigo-300 hover:text-indigo-100">
               {t('auth.register')}
             </Link>
