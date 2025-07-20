@@ -1,0 +1,30 @@
+{
+  "siteTitle": "Amanet",
+  "nav": {
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "about": "À propos",
+    "login": "Connexion",
+    "signup": "Essai gratuit"
+  },
+  "footer": {
+    "legal": {
+      "title": "Légal",
+      "terms": "CGU",
+      "privacy": "Politique de confidentialité"
+    },
+    "links": {
+      "title": "Liens utiles",
+      "support": "Support",
+      "docs": "Documentation",
+      "blog": "Blog"
+    },
+    "social": {
+      "title": "Réseaux sociaux",
+      "twitter": "Twitter",
+      "linkedin": "LinkedIn",
+      "facebook": "Facebook"
+    },
+    "copyright": "© 2024 Amanet"
+  }
+}

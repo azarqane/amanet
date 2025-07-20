@@ -69,6 +69,7 @@ export default function Navbar() {
             <option value="fr">FR</option>
             <option value="en">EN</option>
             <option value="ar">AR</option>
+            <option value="tf">TF</option>
           </select>
         </div>
 
@@ -123,6 +124,7 @@ export default function Navbar() {
               <option value="fr">FR</option>
               <option value="en">EN</option>
               <option value="ar">AR</option>
+              <option value="tf">TF</option>
             </select>
           </li>
         </ul>

@@ -1,0 +1,11 @@
+{
+  "auth": {
+    "loginTitle": "Connectez-vous à votre compte",
+    "email": "Email",
+    "password": "Mot de passe",
+    "login": "Se connecter",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "register": "Créer un compte",
+    "errorInvalid": "Identifiants invalides."
+  }
+}
