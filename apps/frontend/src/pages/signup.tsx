@@ -1,7 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import AppLayout from '../components/AppLayout';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '../utils/supabaseClient';
 import { FiHome, FiUser, FiBook, FiEye, FiEyeOff } from 'react-icons/fi';
@@ -54,8 +53,7 @@ export default function Signup() {
   );
 
   return (
-    <AppLayout>
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 to-black text-gray-100">
+    <div className="min-h-screen flex items-center justify-center text-gray-100">
         <Head>
           <title>{t('auth.createAccountTitle')}</title>
         </Head>
@@ -184,6 +182,6 @@ export default function Signup() {
 
         </div>
       </div>
-    </AppLayout>
+    </div>
   );
 }
