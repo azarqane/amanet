@@ -7,17 +7,28 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Close menu on scroll
   useEffect(() => {
-    const onScroll = () => {
+    const handleScroll = () => {
+      if (menuOpen) setMenuOpen(false);
       setScrolled(window.scrollY > 0);
     };
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [menuOpen]);
 
   const changeLanguage = (e: ChangeEvent<HTMLSelectElement>) => {
     i18n.changeLanguage(e.target.value);
+    setMenuOpen(false);
   };
+
+  const menuItems = [
+    { key: 'features', label: t('nav.features'), href: '#features' },
+    { key: 'pricing',  label: t('nav.pricing'),  href: '#pricing'  },
+    { key: 'about',    label: t('nav.about'),    href: '#about'    },
+  ];
+
+  const handleItemClick = () => setMenuOpen(false);
 
   return (
     <nav
@@ -28,27 +39,21 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-6">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 rtl:space-x-reverse">
           <BookOpenIcon className="h-8 w-8" />
           <span className="font-semibold text-xl">{t('siteTitle')}</span>
         </div>
 
         {/* Desktop menu */}
         <div className="hidden md:flex items-center space-x-6 rtl:space-x-reverse">
-          <a href="#features" className="hover:text-indigo-200">
-            {t('nav.features')}
-          </a>
-          <a href="#pricing" className="hover:text-indigo-200">
-            {t('nav.pricing')}
-          </a>
-          <a href="#about" className="hover:text-indigo-200">
-            {t('nav.about')}
-          </a>
-          {/* Outline login button */}
+          {menuItems.map((item) => (
+            <a key={item.key} href={item.href} className="hover:text-indigo-200">
+              {item.label}
+            </a>
+          ))}
           <button className="rounded-full border border-blue-600 px-4 py-2">
             {t('nav.login')}
           </button>
-          {/* Filled signup button */}
           <button className="rounded-full bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white">
             {t('nav.signup')}
           </button>
@@ -64,41 +69,57 @@ export default function Navbar() {
         </div>
 
         {/* Mobile menu toggle */}
-        <button className="md:hidden" onClick={() => setMenuOpen(o => !o)}>
+        <button
+          className="md:hidden"
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label={menuOpen ? t('nav.closeMenu') : t('nav.menuToggle')}
+        >
           {menuOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
         </button>
       </div>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden px-6 pb-4 space-y-2">
-          <a href="#features" className="hover:text-indigo-200">
-            {t('nav.features')}
-          </a>
-          <a href="#pricing" className="hover:text-indigo-200">
-            {t('nav.pricing')}
-          </a>
-          <a href="#about" className="hover:text-indigo-200">
-            {t('nav.about')}
-          </a>
-          {/* Outline login button mobile */}
-          <button className="rounded-full border border-blue-600 px-4 py-2">
-            {t('nav.login')}
-          </button>
-          {/* Filled signup button mobile */}
-          <button className="rounded-full bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white">
-            {t('nav.signup')}
-          </button>
-          <select
-            value={i18n.language}
-            onChange={changeLanguage}
-            className="bg-transparent text-white border border-white rounded px-2 py-1"
-          >
-            <option value="fr">FR</option>
-            <option value="en">EN</option>
-            <option value="ar">AR</option>
-          </select>
-        </div>
+        <ul className="md:hidden flex flex-col space-y-2 px-6 pb-4 text-start">
+          {menuItems.map((item) => (
+            <li key={item.key}>
+              <a
+                href={item.href}
+                onClick={handleItemClick}
+                className="block w-full px-3 py-2 hover:bg-gray-700 rounded"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+          <li>
+            <button
+              onClick={handleItemClick}
+              className="w-full text-start rounded-full border border-blue-600 px-4 py-2"
+            >
+              {t('nav.login')}
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={handleItemClick}
+              className="w-full text-start rounded-full bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white"
+            >
+              {t('nav.signup')}
+            </button>
+          </li>
+          <li>
+            <select
+              value={i18n.language}
+              onChange={changeLanguage}
+              className="w-full bg-transparent text-white border border-white rounded px-2 py-1"
+            >
+              <option value="fr">FR</option>
+              <option value="en">EN</option>
+              <option value="ar">AR</option>
+            </select>
+          </li>
+        </ul>
       )}
     </nav>
   );
