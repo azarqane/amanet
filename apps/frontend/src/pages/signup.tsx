@@ -90,7 +90,7 @@ export default function Signup() {
 
         <div className="w-full max-w-lg bg-black/50 backdrop-blur-md p-8 rounded-xl shadow-xl">
           {/* Progress bar */}
-          <div className="flex items-center mb-6 space-x-2">
+            <div className="flex items-center mb-6 space-x-2 rtl:space-x-reverse">
             {[1, 2, 3].map((s) => (
               <div key={s} className="flex-1 h-1 rounded-full overflow-hidden bg-gray-700">
                 <div
