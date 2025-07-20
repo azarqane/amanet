@@ -1,4 +1,5 @@
 import { BookOpenIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState, type ChangeEvent } from 'react';
 
@@ -54,9 +55,9 @@ export default function Navbar() {
           <button className="rounded-full border border-blue-600 px-4 py-2">
             {t('nav.login')}
           </button>
-          <button className="rounded-full bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white">
+          <Link href="/signup" className="rounded-full bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white">
             {t('nav.signup')}
-          </button>
+          </Link>
           <select
             value={i18n.language}
             onChange={changeLanguage}
@@ -101,12 +102,13 @@ export default function Navbar() {
             </button>
           </li>
           <li>
-            <button
+            <Link
+              href="/signup"
               onClick={handleItemClick}
               className="w-full text-start rounded-full bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white"
             >
               {t('nav.signup')}
-            </button>
+            </Link>
           </li>
           <li>
             <select
