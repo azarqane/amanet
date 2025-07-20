@@ -70,7 +70,7 @@ export default function Login() {
 
           <p className="text-sm text-center">
             {t('auth.noAccount')}{' '}
-            <Link href="/signup" className="underline text-indigo-300 hover:text-indigo-100">
+            <Link href="/auth/signup" className="underline text-indigo-300 hover:text-indigo-100">
               {t('auth.register')}
             </Link>
           </p>
