@@ -13,7 +13,9 @@ export default function Signup() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [showPwd, setShowPwd] = useState(false);
+  const [showConfirmPwd, setShowConfirmPwd] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const [loading, setLoading] = useState(false);
   const { t } = useTranslation('signup');
@@ -21,6 +23,10 @@ export default function Signup() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setErrorMsg('');
+    if (password !== confirmPassword) {
+      setErrorMsg(t('auth.passwordMismatch'));
+      return;
+    }
     setLoading(true);
     const { error } = await supabase.auth.signUp({
       email,
@@ -36,7 +42,14 @@ export default function Signup() {
     setLoading(false);
 
     if (error) {
-      setErrorMsg(error.message);
+      if (
+        error.message.toLowerCase().includes('already') ||
+        error.message.toLowerCase().includes('exist')
+      ) {
+        setErrorMsg(t('auth.emailAlreadyUsed'));
+      } else {
+        setErrorMsg(error.message);
+      }
     } else {
       setStep(3);
     }
@@ -145,6 +158,7 @@ export default function Signup() {
                 <label className="block mb-1 text-sm">{t('auth.email')}</label>
                 <input
                   type="email"
+                  autoComplete="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -169,6 +183,27 @@ export default function Signup() {
                     tabIndex={-1}
                   >
                     {showPwd ? <FiEyeOff /> : <FiEye />}
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <label className="block mb-1 text-sm">{t('auth.confirmPassword')}</label>
+                <div className="relative">
+                  <input
+                    type={showConfirmPwd ? 'text' : 'password'}
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    required
+                    className="w-full px-4 py-2 rounded-lg bg-gray-800 pr-10 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowConfirmPwd(!showConfirmPwd)}
+                    className="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-gray-200"
+                    tabIndex={-1}
+                  >
+                    {showConfirmPwd ? <FiEyeOff /> : <FiEye />}
                   </button>
                 </div>
               </div>
