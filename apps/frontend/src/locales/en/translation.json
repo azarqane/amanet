@@ -133,7 +133,13 @@
     "email": "Email",
     "password": "Password",
     "register": "Create an account",
-    "login": "Log in"
+    "login": "Log in",
+    "createAccountTitle": "Create your account",
+    "signUpAs": "Sign up as {{role}}",
+    "institutionName": "Institution name",
+    "name": "Name",
+    "back": "Back",
+    "alreadyAccount": "Already have an account?"
   },
   "footer": {
     "legal": {
