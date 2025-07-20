@@ -126,6 +126,15 @@
       "cta": "Contactez-nous"
     }
   },
+  "auth": {
+    "chooseRole": "Êtes-vous un établissement/entreprise ou un apprenant ?",
+    "institution": "Établissement/Entreprise",
+    "learner": "Apprenant",
+    "email": "Email",
+    "password": "Mot de passe",
+    "register": "Créer un compte",
+    "login": "Se connecter"
+  },
   "footer": {
     "legal": {
       "title": "Légal",
