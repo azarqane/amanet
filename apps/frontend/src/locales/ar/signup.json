@@ -13,6 +13,10 @@
     "name": "الاسم",
     "back": "رجوع",
     "alreadyAccount": "لديك حساب بالفعل؟",
-    "signupSuccess": "تحقق من بريدك الإلكتروني لتأكيد حسابك."
+    "signupSuccess": "تحقق من بريدك الإلكتروني لتأكيد حسابك.",
+    "chooseRoleHint": "هل أنت مؤسسة/شركة أم متعلم؟",
+    "checkEmailTitle": "تحقق من بريدك الإلكتروني",
+    "checkEmailSubtitle": "لقد أرسلنا رابط تأكيد إلى بريدك الإلكتروني.",
+    "loginHref": "/login"
   }
 }

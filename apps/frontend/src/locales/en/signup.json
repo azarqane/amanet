@@ -13,6 +13,10 @@
     "name": "Name",
     "back": "Back",
     "alreadyAccount": "Already have an account?",
-    "signupSuccess": "Check your email to confirm your account."
+    "signupSuccess": "Check your email to confirm your account.",
+    "chooseRoleHint": "Are you an institution/company or a learner?",
+    "checkEmailTitle": "Check your email",
+    "checkEmailSubtitle": "We sent you a confirmation link to activate your account.",
+    "loginHref": "/login"
   }
 }
