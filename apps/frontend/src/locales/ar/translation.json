@@ -133,7 +133,13 @@
     "email": "البريد الإلكتروني",
     "password": "كلمة المرور",
     "register": "إنشاء حساب",
-    "login": "تسجيل الدخول"
+    "login": "تسجيل الدخول",
+    "createAccountTitle": "أنشئ حسابك",
+    "signUpAs": "سجّل كـ{{role}}",
+    "institutionName": "اسم المؤسسة",
+    "name": "الاسم",
+    "back": "رجوع",
+    "alreadyAccount": "لديك حساب بالفعل؟"
   },
   "footer": {
     "legal": {
